@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #f8f8f8;
+        font-family: 'Inter', sans-serif;
+      }
+      .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .card-img-top {
+        height: 220px;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 25px;
+      }
+      .card-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+      .card-text {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+      .btn-primary {
+        background-color: #725BF0;
+        border-color: #725BF0;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-primary:hover {
+        background-color: #5a47d0;
+        transform: translateY(-2px);
+      }
+      h1 {
+        color: #2c3e50;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      .lead {
+        color: #666;
+        font-size: 1.25rem;
+      }
+      .category-card .card-body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      .category-card .card-title {
+        color: white;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+      }
+      .category-card .card-text, .category-card .btn {
+        display: none;
+      }
+      .category-card {
+        cursor: pointer;
+        position: relative;
+        height: 220px;
+      }
+      .category-card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="images/LOGO.jpg" width="66" height="66" alt="Sri Lanka Logo" />
+            <strong>Sri Lanka</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent1"
+            aria-controls="navbarSupportedContent1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="HomeMain.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery&nbsp;</a>
+              </li>
+              <li class="nav-item dropdown active">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown1"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Services&nbsp;
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <a class="dropdown-item" href="travel and transport.html">Travel and Transport</a>
+                  <a class="dropdown-item" href="accommodation.html">Hotels and Other Accommodation</a>
+                  <a class="dropdown-item" href="experience.html">Experiences & Activities</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0"></form>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Hotels and Other Accommodation</h1>
+      <p class="text-center lead mb-5">
+        Please select your stay from the below mention categories:
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="starhotel.jpg" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/starhotel.jpg"
+                alt="Star Class Hotels"/>
+              <div class="card-body">
+                <h5 class="card-title">Star Class Hotels</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/normalhotel.jpg"
+                alt="Other Hotels"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Other Hotels</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/botique.jpg"
+                alt="Boutique Hotels"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Boutique Hotels</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/villa.jpg"
+                alt="Boutique Villas"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Boutique Villas</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/banglows.jpg"
+                alt="Bungalows"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Bungalows</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/guesthouse.jpg"
+                alt="Guest Houses"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Guest Houses</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/heritage.jpg"
+                alt="Heritage Bungalows"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Heritage Bungalows</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/home.jpg"
+                alt="Heritage Homes"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Heritage Homes</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mb-4">
+          <a href="#" class="text-decoration-none">
+            <div class="card shadow-sm category-card">
+              <img
+                class="card-img-top"
+                src="images/stay.jpg"
+                alt="Home Stays"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Home Stays</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>

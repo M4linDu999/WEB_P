@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body, html {
+        height: 100%;
+        font-family: 'Segoe UI', sans-serif;
+      }
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+      .site-title {
+        color: #fff;
+        font-size: 3em;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .categories {
+        text-align: center;
+        padding: 50px 20px;
+        background: #f9f9f9;
+      }
+      .categories h2 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        color: #222;
+      }
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .category {
+        background: #0077cc;
+        color: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .category:hover {
+        background: #005199;
+      }
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+      }
+      .lightbox.active {
+        display: flex;
+      }
+      .lightbox-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 100px;
+      }
+      .lightbox-gallery img {
+        width: 200px;
+        border-radius: 6px;
+        transition: transform 0.3s;
+      }
+      .lightbox-gallery img:hover {
+        transform: scale(1.05);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+      }
+      .map-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #f2f2f2;
+      }
+      .map-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .map-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 3px solid #0077cc;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"></a>
+          <img src="images/LOGO.jpg" width="66" height="66" alt=""/>
+          <strong>Sri Lanka</strong>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="HomeMain.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallary</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <a class="dropdown-item" href="travel and transport.html">Travel and Transport</a>
+                  <a class="dropdown-item" href="accommodation.html">Hotels and Other Accommodation</a>
+                  <a class="dropdown-item" href="experience.html">Experiences & Activities</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+        <section class="hero">
+          <video autoplay muted loop playsinline>
+            <source src="images/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="overlay">
+            <h1 class="site-title">Discover the Wonders of Sri Lanka</h1>
+          </div>
+        </section>
+        <section class="categories">
+          <h2>📸 Explore Sri Lanka by Theme</h2>
+          <div class="category-list">
+            <div class="category" data-category="nature">Nature & Wildlife</div>
+            <div class="category" data-category="history">Historical Sites</div>
+            <div class="category" data-category="beaches">Beaches & Islands</div>
+            <div class="category" data-category="culture">Cultural Events</div>
+            <div class="category" data-category="food">Food & Lifestyle</div>
+          </div>
+        </section>
+        <div class="lightbox" id="lightbox">
+          <span class="lightbox-close" id="lightbox-close">×</span>
+          <div class="lightbox-gallery" id="lightbox-gallery"></div>
+        </div>
+        <section class="map-section">
+          <h2>Pin Your Journey📍</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1267491.637303319!2d79.76677292062373!3d7.873053799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2df44589e7687%3A0xa00a76f246d53c0!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1669823343134!5m2!1sen!2slk"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </section>
+        <script>
+          const categoryImages = {
+            nature: [
+              "images/N1.jpg", "images/IMG-20250803-WA0007.jpg", "images/IMG-20250803-WA0006.jpg",
+              "images/IMG-20250803-WA0005.jpg", "images/IMG-20250803-WA0004.jpg", "images/IMG-20250803-WA0003.jpg",
+              "images/IMG-20250803-WA0010.jpg", "images/N2.jpg", "images/N3.jpg", "images/N4.jpg", "images/N5.jpg"
+            ],
+            history: [
+              "images/H1.jpg", "images/H2.jpg", "images/H3.jpg", "images/H4.jpg", "images/H5.jpg", "images/H6.jpg", "images/H7.jpg", "images/H8.jpg", "images/H9.jpg", "images/H10.jpg", "images/H11.jpg", "images/H12.jpg"
+            ],
+            beaches: [
+              "images/B1.jpg", "images/B2.jpg", "images/B3.jpg", "images/B4.jpg", "images/B5.jpg", "images/B6.jpg", "images/B7.jpg", "images/B8.jpg", "images/B9.jpg", "images/B10.jpg", "images/B11.jpg", "images/B12.jpg"
+            ],
+            culture: [
+              "images/C1.jpg", "images/C2.jpg", "images/C3.jpg", "images/C4.jpg", "images/C5.jpg", "images/C6.jpg"
+            ],
+            food: [
+              "images/IMG-20250803-WA0076.jpg", "images/IMG-20250803-WA0077.jpg", "images/IMG-20250803-WA0093.jpg", "images/IMG-20250803-WA0096.jpg",
+              "images/IMG-20250803-WA0098.jpg", "images/IMG-20250803-WA0100.jpg", "images/IMG-20250803-WA0094.jpg", "images/IMG-20250803-WA0095.jpg",
+              "images/IMG-20250803-WA0101.jpg", "images/IMG-20250803-WA0102.jpg", "images/IMG-20250803-WA0103.jpg", "images/IMG-20250803-WA0104.jpg"
+            ]
+          };
+          const lightbox = document.getElementById('lightbox');
+          const lightboxGallery = document.getElementById('lightbox-gallery');
+          const closeBtn = document.getElementById('lightbox-close');
+          document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('click', () => {
+              const type = category.dataset.category;
+              const images = categoryImages[type];
+              lightboxGallery.innerHTML = images.map(src => `<img src="${src}" alt="${type} photo">`).join('');
+              lightbox.classList.add('active');
+            });
+          });
+          closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxGallery.innerHTML = '';
+          });
+          lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+              lightbox.classList.remove('active');
+              lightboxGallery.innerHTML = '';
+            }
+          });
+        </script>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
+</html>
